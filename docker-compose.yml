@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"  # Map host port 5000 to container port 5000
+    volumes:
+      - ./logs:/app/logs  # Mount a volume for logs (optional)
+    environment:
+      - FLASK_ENV=production  # Set Flask environment to production

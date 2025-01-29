@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digit Recognition</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 400px;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #dropzone {
+      border: 2px dashed #999;
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      transition: background-color 0.3s;
+    }
+
+    #dropzone.hover {
+      background-color: #e8e8e8;
+    }
+
+    #fileInput {
+      display: none;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Digit Recognition</h1>
+    <div id="dropzone">Drag and drop an image here or click to upload</div>
+    <input type="file" id="fileInput" accept="image/*" />
+    <button id="submitBtn">Predict</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const dropzone = document.getElementById("dropzone");
+    const fileInput = document.getElementById("fileInput");
+    const submitBtn = document.getElementById("submitBtn");
+    const resultDiv = document.getElementById("result");
+    let uploadedFile = null;
+
+    // Drag-and-drop functionality
+    dropzone.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      dropzone.classList.add("hover");
+    });
+
+    dropzone.addEventListener("dragleave", () => {
+      dropzone.classList.remove("hover");
+    });
+
+    dropzone.addEventListener("drop", (event) => {
+      event.preventDefault();
+      dropzone.classList.remove("hover");
+      uploadedFile = event.dataTransfer.files[0];
+      dropzone.textContent = uploadedFile.name;
+    });
+
+    dropzone.addEventListener("click", () => {
+      fileInput.click();
+    });
+
+    fileInput.addEventListener("change", () => {
+      uploadedFile = fileInput.files[0];
+      dropzone.textContent = uploadedFile.name;
+    });
+
+    // Submit the file for prediction
+    submitBtn.addEventListener("click", async () => {
+      if (!uploadedFile) {
+        resultDiv.textContent = "Please upload an image first.";
+        resultDiv.style.color = "red";
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("image", uploadedFile);
+
+      try {
+        resultDiv.textContent = "Predicting...";
+        const response = await fetch("http://localhost:5000/predict", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error("Prediction failed.");
+        }
+
+        const data = await response.json();
+        resultDiv.textContent = `Predicted Digit: ${data.digit}`;
+        resultDiv.style.color = "#007bff";
+      } catch (error) {
+        resultDiv.textContent = "Error: Unable to make prediction.";
+        resultDiv.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html> 

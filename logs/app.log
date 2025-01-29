@@ -1,0 +1,124 @@
+2025-01-18 00:10:45,034 - INFO - Model loaded successfully.
+2025-01-18 00:10:45,065 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://193.1.131.53:5000
+2025-01-18 00:10:45,065 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 00:11:41,370 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "e:\Yadnesh\Python\Handwritten Digit Recognition\app.py", line 29, in index
+    return render_template('template/index.html')  # Ensure index.html is in the templates/ directory
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: template/index.html
+2025-01-18 00:11:41,447 - INFO - 127.0.0.1 - - [18/Jan/2025 00:11:41] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-01-18 00:11:41,515 - INFO - 127.0.0.1 - - [18/Jan/2025 00:11:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-18 00:12:34,695 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "e:\Yadnesh\Python\Handwritten Digit Recognition\app.py", line 29, in index
+    return render_template('template/index.html')  # Ensure index.html is in the templates/ directory
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: template/index.html
+2025-01-18 00:12:34,698 - INFO - 127.0.0.1 - - [18/Jan/2025 00:12:34] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-01-18 00:12:34,801 - INFO - 127.0.0.1 - - [18/Jan/2025 00:12:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-18 00:17:12,665 - INFO - Model loaded successfully.
+2025-01-18 00:17:12,673 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 00:17:12,673 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 00:29:59,401 - INFO - Model loaded successfully.
+2025-01-18 00:29:59,476 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 00:29:59,476 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 00:31:48,663 - INFO - Model loaded successfully.
+2025-01-18 00:31:48,671 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 00:31:48,671 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 00:35:17,711 - INFO - Model loaded successfully.
+2025-01-18 00:35:17,717 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 00:35:17,718 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 00:37:46,642 - INFO - Model loaded successfully.
+2025-01-18 00:37:46,647 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 00:37:46,647 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 11:16:58,096 - INFO - Model loaded successfully.
+2025-01-18 11:16:58,170 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 11:16:58,171 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 11:18:13,048 - INFO - Model loaded successfully.
+2025-01-18 11:18:13,053 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 11:18:13,061 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 11:20:04,586 - INFO - Model loaded successfully.
+2025-01-18 11:20:04,592 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 11:20:04,592 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 11:25:25,027 - INFO - Model loaded successfully.
+2025-01-18 11:25:25,101 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 11:25:25,101 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-18 11:29:07,793 - INFO - Model loaded successfully.
+2025-01-18 11:29:07,796 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-01-18 11:29:07,797 - INFO - [33mPress CTRL+C to quit[0m
